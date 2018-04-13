@@ -6,8 +6,8 @@ matrix:
       script:
       - nix-build ./release.nix -I darwin=. -A tests
       - nix-build ./release.nix -I darwin=. -A examples.simple
-      - yes | nix-shell -A installer
+      - yes | nix-shell -E 'with import (builtins.fetchGit ./.) {}; installer'
       - nix-shell -A installer.check
       - /run/current-system/sw/bin/darwin-rebuild switch -I darwin=$HOME/.nix-defexpr/channels/darwin -I darwin-config=$HOME/.nixpkgs/darwin-configuration.nix
-      - yes | nix-shell -A uninstaller
+      - yes | nix-shell -E 'with import (builtins.fetchGit ./.) {}; uninstaller'
       - nix-shell -A uninstaller.check

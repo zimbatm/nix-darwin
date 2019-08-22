@@ -112,6 +112,7 @@ let
     tests.security-pki = makeTest ./tests/security-pki.nix;
     tests.services-activate-system = makeTest ./tests/services-activate-system.nix;
     tests.services-buildkite-agent = makeTest ./tests/services-buildkite-agent.nix;
+    tests.services-gitlab-runner = makeTest ./tests/services-gitlab-runner.nix;
     tests.services-nix-daemon = makeTest ./tests/services-nix-daemon.nix;
     tests.sockets-nix-daemon = makeTest ./tests/sockets-nix-daemon.nix;
     tests.services-nix-gc = makeTest ./tests/services-nix-gc.nix;
